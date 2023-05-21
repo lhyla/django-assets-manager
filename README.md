@@ -1,7 +1,3 @@
-```
-cd simple-django-app/cool_counters
-```
-
 Run migrations to update/create database
 ```
 python3 manage.py makemigrations
