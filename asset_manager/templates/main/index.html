@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Strona Główna</title>
+    <style>
+        /* Body styles */
+        body {
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top-bar styles */
+        .top-bar {
+            background-color: #dcdcdc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .top-bar a {
+            margin: 10px;
+            padding: 15px 20px;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar a:hover {
+            background-color: #f2f2f2;
+        }
+
+        /* Content styles */
+        .content {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+                /* Table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="{% url 'index' %}">Strona Główna</a>
+        <a href="{% url 'asset' %}">Aktywa</a>
+        <a href="{% url 'income' %}">Dochody</a>
+        <a href="{% url 'outcome' %}">Wydatki</a>
+
+
+    </div>
+
+    <div class="content">
+        <h1>Witaj w aplikacji do zarządzania majątkiem!</h1>
+    </div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nazwa</th>
+        <th>Wartość</th>
+    </tr>
+    </thead>
+
+    <tr>
+        <td><strong>Suma aktywów:</strong></td>
+        <td><strong>{{ assets_total_value }}</strong></td>
+        <td></td>
+    </tr>
+        <tr>
+        <td><strong>Suma dochodów:</strong></td>
+        <td><strong>{{ incomes_total_value }}</strong></td>
+        <td></td>
+    </tr>
+        <tr>
+        <td><strong>Suma kosztów:</strong></td>
+        <td><strong>{{ outcomes_total_value }}</strong></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+</html>
